@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.9">
+  <actions/>
+  <description><%= @description %></description>
+<% unless @display_name.nil? -%>
+  <displayName><%= @display_name %></displayName>
+<% end -%>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+<% @properties.each do |property, options| %>
+<%= pipeline_template(property, 'property', options) %>
+<% end %>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.23">
+    <script><%= @script %></script>
+    <sandbox><%= @sandbox %></sandbox>
+  </definition>
+  <triggers/>
+</flow-definition>
