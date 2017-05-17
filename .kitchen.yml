@@ -18,19 +18,23 @@ provisioner:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
 
-verifier:
-  name: inspec
-
 platforms:
   - name: ubuntu-14.04
   - name: ubuntu-16.04
   - name: centos-7.3
 
 suites:
-  - name: default
+  # - name: default
+  #   run_list:
+  #     - recipe[jenkins_job::default]
+
+  #
+  # Job suites
+  #
+  - name: jenkins_job_create
     run_list:
-      - recipe[jenkins_job::default]
-    verifier:
-      inspec_tests:
-        - test/smoke/default
-    attributes:
+      - jenkins_job::create_freestyle
+      - jenkins_job::create_folder
+      - jenkins_job::create_pipeline
+      - jenkins_job::create_github_org
+      - jenkins_job::create_multibranch_pipeline

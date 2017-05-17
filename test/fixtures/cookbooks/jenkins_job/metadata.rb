@@ -1,4 +1,3 @@
 name 'jenkins_job'
-depends 'java'
-depends 'jenkins'
+depends 'jenkins_server_wrapper'
 depends 'chef_jenkins'
