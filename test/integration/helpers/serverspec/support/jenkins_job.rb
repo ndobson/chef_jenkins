@@ -44,7 +44,7 @@ module Serverspec
       def xml
         return @xml if @xml
 
-        contents = ::File.read("/var/lib/jenkins/jobs/#{name.gsub(/^\/(.*)\/$/, '\\1').gsub(/\//, '/jobs/')}/config.xml")
+        contents = ::File.read("/var/lib/jenkins/jobs/#{name.gsub(%r{^\/(.*)\/$}, '\\1').gsub(%r{\/}, '/jobs/')}/config.xml")
         @xml = REXML::Document.new(contents)
       rescue Errno::ENOENT
         @xml = nil

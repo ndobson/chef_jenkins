@@ -1,0 +1,5 @@
+Style/TrailingCommaInLiteral:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
