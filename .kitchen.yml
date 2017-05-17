@@ -19,18 +19,14 @@ provisioner:
   always_update_cookbooks: true
 
 platforms:
+  - name: debian-7.11
+  - name: debian-8.7
   - name: ubuntu-14.04
   - name: ubuntu-16.04
+  - name: centos-6.8
   - name: centos-7.3
 
 suites:
-  # - name: default
-  #   run_list:
-  #     - recipe[jenkins_job::default]
-
-  #
-  # Job suites
-  #
   - name: jenkins_job_create
     run_list:
       - jenkins_job::create_freestyle

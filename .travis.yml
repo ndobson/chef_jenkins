@@ -1,0 +1,24 @@
+sudo: required
+dist: trusty
+
+# install the pre-release chef-dk.
+addons:
+  apt:
+    sources:
+      - chef-current-trusty
+    packages:
+      - chefdk
+
+branches:
+  only:
+    - master
+
+before_script:
+  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+  - /opt/chefdk/embedded/bin/chef --version
+  - /opt/chefdk/embedded/bin/cookstyle --version
+  - /opt/chefdk/embedded/bin/foodcritic --version
+
+script:
+  - cookstyle --display-cop-names --extra-details
+  - foodcritic .
