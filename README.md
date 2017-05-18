@@ -1,6 +1,6 @@
 # chef_jenkins
 
-[![Build Status](https://travis-ci.org/ndobson/chef_jenkins.svg?branch=master)](https://travis-ci.org/ndobson/chef_jenkins)
+[![Build Status](https://travis-ci.org/ndobson/chef_jenkins.svg?branch=master)](https://travis-ci.org/ndobson/chef_jenkins) [![Cookbook Version](https://img.shields.io/cookbook/v/chef_jenkins.svg)](https://supermarket.chef.io/cookbooks/chef_jenkins)
 
 This cookbook extends the already awesome [Jenkins cookbook](https://supermarket.chef.io/cookbooks/jenkins) to provide a set of resources to make Jenkins job generating a little more painless,
 heavily leverages [templates](https://docs.chef.io/resource_template.html) and [partial templates](https://docs.chef.io/resource_template.html#partial-templates).
