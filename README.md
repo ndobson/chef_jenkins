@@ -34,10 +34,10 @@ This resource creates one or more folder items in Jenkins. Requires the [CloudBe
 This resource creates a Jenkins freestyle job.
 
 ### chef_jenkins_pipeline
-This resource creates a Jenkins freestyle job. Requires the [Pipeline](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin) plugin and it's dependencies to be installed.
+This resource creates a [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/) job. Requires the [Pipeline](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin) plugin and it's dependencies to be installed.
 
 ### chef_jenkins_github_org
-This resource creates a Jenkins freestyle job. Requires the [Pipeline](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Branch+Source+Plugin) plugin and it's dependencies to be installed.
+This resource creates a Jenkins Github organization job. Requires the [Pipeline](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Branch+Source+Plugin) plugin and it's dependencies to be installed.
 
 ### chef_jenkins_multibranch_pipeline
-This resource creates a Jenkins freestyle job. Requires the [GitHub Branch Source](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin) plugin and it's dependencies to be installed.
+This resource creates a [Jenkins Multibranch Pipeline](https://jenkins.io/doc/book/pipeline/multibranch/) job. Requires the [GitHub Branch Source](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin) plugin and it's dependencies to be installed.
