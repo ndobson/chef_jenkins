@@ -8,7 +8,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
 <% @properties.each do |property, options| %>
-<%= pipeline_template(property, 'property', options, @partial_template_cookbook) %>
+<%= partial_template(property, 'property', options, @partial_template_cookbook) %>
 <% end %>
   </properties>
 <% if @scm.empty? %>
