@@ -39,6 +39,10 @@ module Serverspec
         plugin.nil? ? false : plugin =~ rx
       end
 
+      def has_element_with_value?(element, value)
+        value == try { xml.elements["//#{element}"].text }.strip
+      end
+
       private
 
       def xml

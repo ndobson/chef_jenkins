@@ -8,12 +8,19 @@
   <keepDependencies>false</keepDependencies>
   <properties>
 <% @properties.each do |property, options| %>
-<%= pipeline_template(property, 'property', options) %>
+<%= pipeline_template(property, 'property', options, @partial_template_cookbook) %>
 <% end %>
   </properties>
+<% if @scm.empty? %>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.23">
     <script><%= @script %></script>
     <sandbox><%= @sandbox %></sandbox>
+<% else %>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.30">
+    <%= partial_template(@scm.keys[0], 'scm', @scm.values[0], @partial_template_cookbook) %>
+    <scriptPath><%= @script_path %></scriptPath>
+    <lightweight><%= @lightweight %></lightweight>
+<% end %>
   </definition>
   <triggers/>
 </flow-definition>
