@@ -10,7 +10,7 @@
     <org.jenkinsci.plugins.workflow.libs.FolderLibraries plugin="workflow-cps-global-lib@2.8">
       <libraries>
 <% @libraries.each do |library, options| %>
-<%= partial_template(library, 'library', options, @partial_template_cookbook) %>
+<%= partial_template(library, 'library', options, @cookbook, @include_templates) %>
 <% end %>
       </libraries>
     </org.jenkinsci.plugins.workflow.libs.FolderLibraries>

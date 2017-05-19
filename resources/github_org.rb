@@ -33,8 +33,7 @@ property :build_fork_pr_merge, [true, false], default: true
 property :build_fork_pr_head, [true, false], default: false
 
 property :template, String, default: 'github-org-config.xml.erb'
-property :cookbook, String, default: 'chef_jenkins'
-property :partial_template_cookbook, String
+property :include_templates, Array, default: []
 property :auto_create_folders, [true, false], default: true
 
 action :create do
@@ -84,10 +83,11 @@ action :create do
       build_fork_pr_merge: new_resource.build_fork_pr_merge,
       build_fork_pr_head: new_resource.build_fork_pr_head,
 
-      partial_template_cookbook: new_resource.partial_template_cookbook
+      cookbook: new_resource.cookbook_name,
+      include_templates: new_resource.include_templates
     )
     helpers(ChefJenkins::Helper)
-    cookbook new_resource.cookbook
+    cookbook include_templates.include?(new_resource.template) ? new_resource.cookbook_name : 'chef_jenkins'
   end
 
   jenkins_job new_resource.job_name do

@@ -10,7 +10,7 @@
     <org.jenkinsci.plugins.workflow.libs.FolderLibraries plugin="workflow-cps-global-lib@2.8">
       <libraries>
 <% @libraries.each do |library, options| %>
-<%= partial_template(library, 'library', options, @partial_template_cookbook) %>
+<%= partial_template(library, 'library', options, @cookbook, @include_templates) %>
 <% end %>
       </libraries>
     </org.jenkinsci.plugins.workflow.libs.FolderLibraries>
@@ -50,7 +50,7 @@
   <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.0.9">
     <data>
 <% @sources.each do |source_name, options| %>
-<%= partial_template(source_name, 'source', options, @partial_template_cookbook) %>
+<%= partial_template(source_name, 'source', options, @cookbook, @include_templates) %>
 <% end %>
     </data>
     <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
