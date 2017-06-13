@@ -11,7 +11,7 @@ property :sandbox, [true, false], default: false
 
 property :template, String, default: 'pipeline-config.xml.erb'
 property :include_templates, Array, default: []
-property :auto_create_folders, [true, false], default: true
+property :auto_create_folders, [true, false], default: node['chef_jenkins']['auto_create_folders']
 
 action :create do
   folder_name = ::File.dirname(new_resource.job_name)
