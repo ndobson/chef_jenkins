@@ -87,7 +87,7 @@ action :create do
       include_templates: new_resource.include_templates
     )
     helpers(ChefJenkins::Helper)
-    cookbook include_templates.include?(new_resource.template) ? new_resource.cookbook_name : 'chef_jenkins'
+    cookbook new_resource.include_templates.include?(new_resource.template) ? new_resource.cookbook_name : 'chef_jenkins'
   end
 
   jenkins_job new_resource.job_name do

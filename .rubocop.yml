@@ -1,4 +1,4 @@
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInHashLiteral:
   Enabled: false
 
 Style/BlockComments:
